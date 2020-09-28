@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Users from './components/users/Users';
 import Search from './components/users/Search';
@@ -50,6 +51,7 @@ class App extends Component {
 		const { users, loading } = this.state;
 
 		return (
+			<Router>
 			<div className="App">
 				<Navbar />
 				<div className="container">
@@ -63,6 +65,7 @@ class App extends Component {
 					<Users loading={loading} users={users} />
 				</div>
 			</div>
+			</Router>
 		);
 	}
 }
